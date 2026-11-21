@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .header {
+            background: #17365d;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #17365d;
+        }
+
+        .result {
+            background: #2878e8;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        button {
+            background: #2878e8;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    Data Annotation and Labeling Tool
+</div>
+
+<div class="container">
+
+    <h1>Video Analysis Result</h1>
+
+    <p class="result">{{ result }}</p>
+
+    <br><br>
+
+    <a href="/upload">
+        <button>Upload Another Video</button>
+    </a>
+
+</div>
+
+</body>
+</html>

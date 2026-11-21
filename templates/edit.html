@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Label</title>
+</head>
+
+<body>
+
+    <h1>Edit Label</h1>
+
+    <p><b>Data:</b> {{ record.data }}</p>
+
+    <form method="POST">
+
+        <label>Select New Label:</label>
+
+        <select name="label">
+            <option value="Positive">Positive</option>
+            <option value="Negative">Negative</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Update Label</button>
+
+    </form>
+
+    <br>
+
+    <a href="/records">Back to Records</a>
+
+</body>
+</html>

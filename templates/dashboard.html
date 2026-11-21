@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        .header {
+            background: #17365d;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #17365d;
+        }
+
+        .welcome {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: white;
+            width: 220px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        .number {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2878e8;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 25px;
+            background: #2878e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .upload-btn:hover {
+            background: #155ab6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        Data Annotation and Labeling Tool
+    </div>
+
+    <div class="container">
+
+        <h1>Dashboard</h1>
+
+        <p class="welcome">
+            Welcome to the Data Annotation and Labeling Tool
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Records</h3>
+                <div class="number">{{ total }}</div>
+            </div>
+
+            <div class="card">
+                <h3>Labeled</h3>
+                <div class="number">{{ labeled }}</div>
+            </div>
+
+            <div class="card">
+                <h3>Pending</h3>
+                <div class="number">{{ pending }}</div>
+            </div>
+
+        </div>
+
+        <a href="/upload" class="upload-btn">
+            Upload Data
+        </a>
+        <a href="/records" class="upload-btn">
+    Search & Filter Data
+</a>
+
+    </div>
+
+</body>
+</html>

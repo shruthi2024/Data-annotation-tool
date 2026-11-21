@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .header {
+            background: #17365d;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #17365d;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select,
+        textarea,
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #2878e8;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    Data Annotation and Labeling Tool
+</div>
+
+<div class="container">
+
+    <h1>Upload Data</h1>
+
+    <form action="/label" method="POST" enctype="multipart/form-data">
+
+        <label>Select Input Type:</label>
+
+        <select name="input_type" id="input_type" onchange="showInput()">
+            <option value="text">Text</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+        </select>
+
+        <div id="text_input">
+            <label>Enter Text:</label>
+            <textarea name="data" rows="5"
+                placeholder="Enter your text here"></textarea>
+        </div>
+
+        <div id="image_input" style="display:none;">
+            <label>Upload Image:</label>
+            <input type="file" name="image" accept="image/*">
+        </div>
+
+        <div id="video_input" style="display:none;">
+            <label>Upload Video:</label>
+            <input type="file" name="video" accept="video/*">
+        </div>
+
+        <div id="audio_input" style="display:none;">
+            <label>Upload Audio:</label>
+            <input type="file" name="audio" accept="audio/*">
+        </div>
+
+        <button type="submit">Submit Data</button>
+
+    </form>
+
+</div>
+
+<script>
+function showInput() {
+
+    document.getElementById("text_input").style.display = "none";
+    document.getElementById("image_input").style.display = "none";
+    document.getElementById("video_input").style.display = "none";
+    document.getElementById("audio_input").style.display = "none";
+
+    let type = document.getElementById("input_type").value;
+
+    if (type == "text") {
+        document.getElementById("text_input").style.display = "block";
+    }
+
+    if (type == "image") {
+        document.getElementById("image_input").style.display = "block";
+    }
+
+    if (type == "video") {
+        document.getElementById("video_input").style.display = "block";
+    }
+
+    if (type == "audio") {
+        document.getElementById("audio_input").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

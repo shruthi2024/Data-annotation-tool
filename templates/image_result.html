@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .header {
+            background: #17365d;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #17365d;
+        }
+
+        .object {
+            display: inline-block;
+            background: #2878e8;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #2878e8;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    Data Annotation and Labeling Tool
+</div>
+
+<div class="container">
+
+    <h1>Image Analysis Result</h1>
+
+    <h2>Detected Objects</h2>
+
+    {% if objects %}
+        {% for object in objects %}
+            <span class="object">{{ object }}</span>
+        {% endfor %}
+    {% else %}
+        <p>No objects detected.</p>
+    {% endif %}
+
+    <br><br>
+
+    <a href="/upload">
+        <button>Upload Another Image</button>
+    </a>
+
+</div>
+
+</body>
+</html>

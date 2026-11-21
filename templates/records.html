@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search & Filter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #17365d;
+            text-align: center;
+        }
+
+        .search-box {
+            text-align: center;
+            margin: 30px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            background: #2878e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #17365d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Search & Filter Data</h1>
+
+    <div class="search-box">
+        <form method="GET" action="/records">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search data"
+                value="{{ search }}"
+            >
+
+            <select name="label">
+                <option value="All">All</option>
+                <option value="Positive">Positive</option>
+                <option value="Negative">Negative</option>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+            </select>
+
+            <button type="submit">Search</button>
+
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Label</th>
+        </tr>
+
+        {% for record in records %}
+        <tr>
+    <td>{{ record.id }}</td>
+    <td>{{ record.data }}</td>
+    <td>{{ record.label }}</td>
+    <td>
+    <a href="/edit/{{ record.id }}">Edit</a>
+    |
+    <a href="/delete/{{ record.id }}">Delete</a>
+    </td>
+</tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
